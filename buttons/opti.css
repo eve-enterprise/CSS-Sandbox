@@ -52,16 +52,11 @@ html, body {
 
 /* Bouton (span) */
 .switch span {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	width: var(--width_box);
 	height: var(--height_box);
 	background: var(--btn_closed_back_color);
 	border: 2px solid black;
 	border-radius: 6px;
-	color: white;
-	font-weight: bold;
 	cursor: pointer;
 	transition: width var(--transition-duration) ease-in-out,
 				background 0.3s ease-in-out;
@@ -86,28 +81,18 @@ html, body {
 
 .dialog {
 	position: absolute;
-	top: 100%;
 	background-color: var(--dialog_back_color);
-	padding: 10px;
+	padding: 20px;
 	width: var(--width_open_box);
 	border-radius: 0 0 10px 10px;
-	text-align: center;
 	border-top: 0;
 	border-color: black;
 	border-style: solid;
-	opacity: 0;
+	/* opacity: 0; */
 	pointer-events: none;
 	transition: opacity var(--transition-duration) ease;
 	transition-delay: var(--transition-duration); /* Attendre que le bouton ait fini */
 }
-
-/* Apparition de la boîte de dialogue */
-.switch input:checked ~ .dialog {
-	opacity: 1;
-	pointer-events: auto;
-	transform: translateY(0);
-}
-
 
 /* Bouton (span) */
 .switch span {
