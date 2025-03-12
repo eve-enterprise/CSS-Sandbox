@@ -62,9 +62,10 @@ body {
 	color: white;
 	font-weight: bold;
 	anchor-name: --btn;
+	transition: width 10s ease, background 1s ease-out;
 }
 
-/* Texte par défaut */
+/* Affiche Close quand input est :unchecked*/
 .switch input + span::after {
 	content: "Open";
 }
@@ -76,6 +77,7 @@ body {
 	border-radius: 6px 6px 0 0;
 }
 
+/* Affiche Close quand input est :checked*/
 .switch input:checked + span::after {
 	content: "Close";
 }
