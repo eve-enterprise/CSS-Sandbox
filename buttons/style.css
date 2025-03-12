@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+	height: 100vh;
+}
+
+main {
+	height: 100%;
+	position: relative;
+}
+
+.cto {
+	position: absolute;
+	top: 30%;
+	left: 10%;
+}
+
+.cto button {
+	anchor-name: --btn-cto;
+}
+
+.cto:has(button:focus) .dialog {
+	display: block;
+}
+
+.cto .dialog {
+	display: none;
+	position: absolute;
+	background-color: antiquewhite;
+	position-anchor: --btn-cto;
+	top: anchor(bottom);
+}
+
+
