@@ -3,18 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Projet Web</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Lien vers ton fichier CSS -->
+    <title>Nav sun</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenue sur mon site</h1>
-    </header>
+	<button id="left">Left</button>
+	<button id="right">right</button>
+	<main>
+		<div class="nav-sun">
+			<div class="nav-item active" style="background-color: red; rotate: 0deg;"></div>
+			<div class="nav-item" style="background-color: green; rotate: 90deg;"></div>
+			<div class="nav-item" style="background-color: blue; rotate: 180deg;"></div>
+			<div class="nav-item" style="background-color: yellow; rotate: 270deg;"></div>
+			<div class="nav-item" style="background-color: grey; rotate: -90deg;"></div>
+		</div>
+	</main>
+	<script>
+		const left = document.getElementById('left');
+		const right = document.getElementById('right');
+		const navItems = document.querySelectorAll('.nav-item');
 
-    <main>
-        <p>C'est une page de test pour mon projet HTML/CSS/JS.</p>
-    </main>
+		left.addEventListener('click', () => {
+			updateNavSun('left');
+		});
 
-    <script src="js/script.js"></script> <!-- Lien vers ton fichier JS -->
+		right.addEventListener('click', () => {
+			updateNavSun('right');
+		});
+
+		function getOrderedNavItems(direction = "right") {
+			const items = Array.from(document.querySelectorAll(".nav-item"));
+			const activeIndex = items.findIndex(item => item.classList.contains("active"));
+
+			if (activeIndex === -1) return items;
+
+			let orderedItems;
+			if (direction === "right") {
+				orderedItems = [
+					...items.slice(0, activeIndex + 1).reverse(),
+					...items.slice(activeIndex + 1).reverse()
+				];
+			} else {
+				orderedItems = [
+					...items.slice(activeIndex),
+					...items.slice(0, activeIndex)
+				];
+			}
+
+			return orderedItems;
+		}
+
+		function updateNavSun(direction = 'right') {
+			const orderedItems = getOrderedNavItems(direction);
+			orderedItems.forEach((item, i) => {
+				let rotate = parseInt(item.style.rotate);
+				item.classList.remove('active');
+				if (direction == 'right')
+					rotate += 90;
+				else
+					rotate -= 90;
+				item.style.rotate = rotate + 'deg';
+			});
+			orderedItems[0].classList.remove('active');
+			orderedItems[1].classList.add('active');
+		}
+	</script>
 </body>
 </html>
