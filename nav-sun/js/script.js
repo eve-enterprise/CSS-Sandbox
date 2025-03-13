@@ -2,7 +2,7 @@ const container = document.querySelector('.container');
 let currentAngle = 0;
 
 // ici, tu ajustes cette valeur (actuellement 3 degrés pour une sensibilité douce)
-const scrollSensitivity = 5;
+const scrollSensitivity = 3;
 
 container.addEventListener('wheel', (e) => {
 	if (!container.matches(':hover')) return; // rotation uniquement si souris sur .container
