@@ -61,3 +61,17 @@ body {
 	background: #33d9b2;
 	transform: translate(-50%, -50%) rotate(270deg);
 }
+
+.nav-item {
+	position: absolute;
+	width: 100%;
+	aspect-ratio: 1;
+	background-color: #666;
+	transform-origin: top right;
+	rotate: -90deg;
+	transition: rotate 0.5s ease-in-out;
+}
+
+.nav-item.active {
+	rotate: 0deg;
+}
