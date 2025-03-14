@@ -1,22 +1,109 @@
 /* Fichier CSS principal */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4;
+	color: #333;
+	line-height: 1.6;
 }
 
-h1 {
-    color: #3498db;
+main{
+	height: 1500px;
 }
 
-p {
-    font-size: 1.2rem;
+.cursor {
+	position: fixed;
+	z-index: 1;
+	padding: 8px 10px;
+	backdrop-filter: blur(5px);
+	background-color: rgba(199,191,255,0.5);
+	color: rgba(0, 0, 220, 0.8);
+	translate: 20px 20px;
+	border-radius: 20px;
+	text-wrap: nowrap;
+	backdrop-filter: blur(5px);
+	scale: 0;
+	transform-origin: top left;
+	transition: scale .1s ease-out;
 }
+
+
+.container{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 10px;
+	height: 100%;
+}
+
+.box{
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+	padding: 30px;
+	text-align: justify;
+}
+
+.box:hover{
+	transform: scale(0.9);
+	transition: transform 0.3s ease-out;
+}
+
+.box:nth-child(1)
+{
+	background-color: #333;
+}
+
+.box:nth-child(2){
+	background-color: rgb(250, 254, 0);
+}
+
+.box:nth-child(3){
+	background-color: rgb(70, 12, 118);
+}
+.box:nth-child(4){
+	background-color: rgb(6, 209, 87);
+}
+.box:nth-child(5){
+	background-color: rgb(16, 133, 235);
+}
+.box:nth-child(6){
+	background-color: rgb(219, 22, 117);
+}
+
+.box:nth-child(7){
+	background-color: rgb(219, 22, 117);
+}
+.box:nth-child(8){
+	background-color: rgb(219, 22, 117);
+}
+.box:nth-child(9){
+	background-color: rgb(219, 22, 117);
+}
+
+.box:nth-child(10){
+	background-color: rgb(4, 255, 201);
+}
+.box:nth-child(11){
+	background-color: rgb(232, 170, 36);
+}
+
+.box:nth-child(12){
+	background-color: rgb(232, 170, 36);
+}.box:nth-child(13){
+	background-color: rgb(232, 170, 36);
+}.box:nth-child(14){
+	background-color: rgb(232, 170, 36);
+}.box:nth-child(15){
+	background-color: rgb(232, 170, 36);
+}.box:nth-child(16){
+	background-color: rgb(232, 170, 36);
+}
+
