@@ -1,0 +1,103 @@
+/* Fichier CSS principal */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	position: relative;
+	height: clamp(300px, 50vh, 500px);
+	aspect-ratio: 3/4;
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 20px 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.card.card-front {
+	position: absolute;
+	background-color: white;
+	z-index: 1;
+	transform-origin: bottom right;
+	transition: all .3s ease-out;
+}
+
+.card.card-back {
+	position: absolute;
+	z-index: auto;
+	transform-origin: bottom left;
+	transition: all .3s ease-out;
+}
+
+.card.card-back svg {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card .card-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.card .card-header .logo {
+	max-width: clamp(20px, 7vw, 50px);
+	aspect-ratio: 1/1;
+}
+
+.card .card-header .logo svg {
+	width: 100%;
+	height: 100%;
+}
+
+.card .card-header .logo svg path {
+	stroke: black;
+	transition: all .3s ease-out;
+}
+
+.card .card-content p {
+	font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.card.card-front:hover {
+	background-color: rgb(23, 22, 22);
+	color: white;
+	rotate: 10deg;
+}
+
+.card.card-front:hover + .card-back {
+	rotate: -20deg;
+	translate: 20px -60px;
+}
+
+.card.card-front:hover .card-header .logo svg path {
+	stroke: white;
+}
