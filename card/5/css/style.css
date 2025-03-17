@@ -63,7 +63,7 @@ p {
 	align-items: end;
     padding: 20px;
 	translate: 0 100%;
-	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 65%);
+	background: linear-gradient(0deg, #030303 0%, rgba(3,3,3,1) 30%, rgba(3,3,3,0) 65%);
 	transition: translate 0.3s ease-out;
 }
 
@@ -73,4 +73,17 @@ p {
 
 .card:hover .card-content {
 	translate: 0 0;
+}
+
+@media screen and (max-width: 900px) {
+	.container {
+		height: auto;
+		flex-direction: column;
+	}
+
+	.card {
+		height: 60vh;
+		max-width: 50vw;
+	}
+	
 }
