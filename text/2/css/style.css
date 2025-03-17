@@ -1,0 +1,61 @@
+/* Fichier CSS principal */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+}
+
+p {
+	text-align: center;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.box {
+	width: 90vw;
+	height: 200vh;
+}
+
+p.text-animation {
+	font-size: 0;
+	text-transform: uppercase;
+}
+
+span[data-type="space"] {
+	margin: 5px;
+}
+
+
+span[data-type="char"] {
+	--opacity-start: 0;
+	--view-end: 50%;
+    font-size: 3rem;
+	animation-name: char;
+	animation-duration: 1ms;
+	animation-timing-function: linear;
+	animation-timeline: view(block var(--view-end) 0);
+}
+
+@keyframes char {
+	from {
+		opacity: var(--opacity-start);
+		filter: blur(10px);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0);
+	}
+} 
+
