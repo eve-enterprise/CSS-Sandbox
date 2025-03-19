@@ -1,20 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Projet Web</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Lien vers ton fichier CSS -->
-</head>
-<body>
-    <header>
-        <h1>Bienvenue sur mon site</h1>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Scroll + Highlight</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<!-- Barre latérale -->
+			<aside class="sidebar">
+				<ol class="steps">
+					<li data-target="section1" class="active">
+						<span class="step-num">1</span>
+					</li>
+					<li data-target="section2">
+						<span class="step-num">2</span>
+					</li>
+					<li data-target="section3">
+						<span class="step-num">3</span>
+					</li>
+				</ol>
+			</aside>
 
-    <main>
-        <p>C'est une page de test pour mon projet HTML/CSS/JS.</p>
-    </main>
+			<!-- Contenu principal -->
+			<main class="content">
+				<!-- Section 1 -->
+				<section id="section1" class="panel">
+					<h1>Empower Your Devices</h1>
+					<p>
+						Effortlessly manage and operate your devices from
+						anywhere...
+					</p>
+					<div class="card">Card 1</div>
+				</section>
 
-    <script src="js/script.js"></script> <!-- Lien vers ton fichier JS -->
-</body>
+				<!-- Section 2 -->
+				<section id="section2" class="panel">
+					<h1>Effortless File Transfers</h1>
+					<p>
+						With lightning-fast speeds and seamless integration...
+					</p>
+					<div class="card">Card 2</div>
+				</section>
+
+				<!-- Section 3 -->
+				<section id="section3" class="panel">
+					<h1>Collaborate Anywhere</h1>
+					<p>
+						Break barriers of distance and foster meaningful
+						connections...
+					</p>
+					<div class="card">Card 3</div>
+				</section>
+			</main>
+		</div>
+
+		<script src="js/script.js"></script>
+	</body>
 </html>

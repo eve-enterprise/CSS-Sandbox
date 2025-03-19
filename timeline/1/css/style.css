@@ -1,22 +1,107 @@
-/* Fichier CSS principal */
-
+/* ========== Reset & Base ========== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+	font-family: Arial, sans-serif;
+	color: #333;
 }
 
-h1 {
-    color: #3498db;
+/* ========== Layout container ========== */
+.container {
+	display: flex;
+	min-height: 100vh;
 }
 
-p {
-    font-size: 1.2rem;
+/* ========== Sidebar ========== */
+.sidebar {
+	width: 25%;
+	padding: 40px 20px;
+	/* On veut que la sidebar reste visible lors du scroll */
+	position: sticky;
+	top: 30%;
+	height: 100vh; /* selon ton design */
+}
+
+/* La liste des étapes */
+.steps {
+	list-style: none;
+	position: relative;
+	padding-left: 30px; /* laisser de la place pour le trait */
+	margin-top: 2rem;
+	/* variable CSS qui contrôlera la hauteur du trait violet */
+	--progress-height: 0;
+}
+
+/* Trait gris de fond */
+.steps::before {
+	content: "";
+	position: absolute;
+	left: 10px;
+	top: 0;
+	width: 2px;
+	height: 100%;
+	background: #ccc;
+	z-index: 1;
+}
+
+/* Trait violet qui se remplit */
+.steps::after {
+	content: "";
+	position: absolute;
+	left: 10px;
+	top: 0;
+	width: 2px;
+	height: var(--progress-height);
+	background: #6e40ff;
+	z-index: 2;
+	transition: height 0.3s ease;
+}
+
+/* Chaque étape */
+.steps li {
+	margin-bottom: 50px;
+	position: relative;
+	cursor: pointer;
+}
+
+/* Le rond numéroté */
+.step-num {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: #ccc;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 24px;
+	color: #fff;
+	z-index: 3;
+	position: relative;
+}
+
+/* Étape active => rond violet */
+.steps li.active .step-num {
+	background: #6e40ff;
+}
+
+/* ========== Main content ========== */
+.content {
+	width: 75%;
+	padding: 40px;
+}
+
+/* Panels de contenu */
+.panel {
+	min-height: 100vh; /* pour scroller sur toute la hauteur */
+	padding: 60px 0;
+	border-bottom: 1px solid #ddd;
+}
+
+.card {
+	margin-top: 20px;
+	background: #fff;
+	padding: 20px;
+	border: 1px solid #eee;
 }
